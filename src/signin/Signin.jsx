@@ -34,10 +34,10 @@ export class Signin extends Component {
                 <p className="text">Not your computer? Use Guest mode to sign in privately.</p>
                 {/* <p className="learnmore">Learn more</p> */}
             </div>
-            <div className="create">
-                <p className="c-text" >Create account</p>
-                <div className="box">
-                <Button variant="next">Next</Button>
+            <div className="s-create">
+                <p className="s-text" >Create account</p>
+                <div className="s-box">
+                <Button style={{ backgroundColor: '#1a73e8',color: 'white' }} variant="next">Next</Button>
                 </div>
             </div>
         </div>

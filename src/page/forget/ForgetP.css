@@ -76,7 +76,7 @@
     cursor: pointer;
 }
 
-.s-create{
+.create{
     display: flex;
     font-family: "Google Sans",Arial,sans-serif;
     margin: 0vh 2vw;
@@ -84,13 +84,13 @@
     border: 0;
     justify-content: space-between;
     margin-left: -8px;
-    margin-top: 26px;
+    margin-top: 80px;
     min-height: 48px;
     padding-bottom: 20px;
     box-sizing: inherit;
 }
 
-.s-text{
+.c-text{
     color: blue;
     /* align-items: center; */
     /* justify-content: center; */
@@ -106,13 +106,20 @@
     /* background-color: blue; */
 }
 
-.s-box{
-    margin: 0vh 0vw 0vh 10vw;
+.box{
+    margin: 30px 0vw 0vh -80px;
     font-family: "Google Sans",Roboto,Arial,sans-serif;
     font-size: .875rem;
     letter-spacing: .0107142857em;
     font-weight: 500;
     text-transform: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 24px 0 0;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+    
     
 }
 

@@ -21,7 +21,7 @@
 
 .Google{
     display: flex;
-    font-size: 20px;
+    font-size: 22px;
     margin: 0vh 0vw 0vh -18vw; 
     margin-left: 38%;
     width: 75;
@@ -76,21 +76,21 @@
     cursor: pointer;
 }
 
-.s-create{
+.next-b{
     display: flex;
     font-family: "Google Sans",Arial,sans-serif;
     margin: 0vh 2vw;
     cursor: pointer;
     border: 0;
     justify-content: space-between;
-    margin-left: -8px;
-    margin-top: 26px;
+    margin-left: 100px;
+    margin-top: 30px;
     min-height: 48px;
     padding-bottom: 20px;
     box-sizing: inherit;
 }
 
-.s-text{
+.c-text{
     color: blue;
     /* align-items: center; */
     /* justify-content: center; */
@@ -106,13 +106,20 @@
     /* background-color: blue; */
 }
 
-.s-box{
-    margin: 0vh 0vw 0vh 10vw;
+.n-box{
+    margin: 20px 0vw 0vh 200px;
     font-family: "Google Sans",Roboto,Arial,sans-serif;
     font-size: .875rem;
     letter-spacing: .0107142857em;
     font-weight: 500;
     text-transform: none;
+    display: inline-block;
+    font-size: 14px;
+    padding: 24px 0 0;
+    vertical-align: top;
+    white-space: normal;
+    width: 100%;
+    
     
 }
 
@@ -125,3 +132,67 @@
     width: 100%;
     padding-top: 5px;
   }
+
+  .checkbox {
+    display: flex;
+    justify-self: start;
+    height: 45px;
+}
+@media (max-width: 600px)and(min-width: 300px){
+    #login-page{
+        display: block;
+    }
+}
+@media (max-width: 500px)and(min-width: 300px){
+    #login-container{
+        display: block;
+    }}
+    @media (max-width: 400px)and(min-width: 250px){
+    #first-content{
+        display: block;
+    }}
+    @media (max-width: 350px)and(min-width: 300px){
+    #Google{
+        display: block;
+    }}
+    #sign-in{
+        display: block;
+    }
+    #account{
+        display: block;
+    }
+    #email{
+        display: block;
+    }
+    #sign-in{
+        display: block;
+    }
+    #row-pass{
+        display: block;
+    }
+    #checkbox{
+        display: block;
+    }
+    #next-b{
+        display: block;
+    }
+    @media (max-width: 200px)and(min-width: 100px){
+    #n-box{
+        display: block;
+        
+            margin: 40px 0vw 0vh 100px;
+            font-family: "Google Sans",Roboto,Arial,sans-serif;
+            font-size: .875rem;
+            letter-spacing: .0107142857em;
+            font-weight: 500;
+            text-transform: none;
+            display: inline-block;
+            font-size: 14px;
+            padding: 24px 0 0;
+            /* vertical-align: top; */
+            white-space: normal;
+            width: 100%;
+            
+            
+        
+    }}

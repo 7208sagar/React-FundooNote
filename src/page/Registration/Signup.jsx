@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 // import { TextField } from '@mui/material'
 // import logo from '../../assets/logo.jpg'
-import './Signup.css'
-import Button from '@mui/material/Button';
+ import './Signup.css'
+// import './Signup.scss'
+// import Button from '@mui/material/Button';
 
 export class Signup extends Component {
   constructor(props) {
@@ -40,8 +41,8 @@ showPassword = (event) => {
               </div>
               
               <div className='first-r'>
-              <div className='left-r'><TextField id="outlined-basic" label="First name" size='small' fullWidth variant="outlined" /></div>
-              <div className='left-r'><TextField id="outlined-basic" label="Last name" size='small' fullWidth variant="outlined" /></div>
+              <div className='left-r'><TextField type={this.state.type} id="outlined-basic" label="First name" size='small' fullWidth variant="outlined" /></div>
+              <div className='left-r'><TextField  type={this.state.type} id="outlined-basic" label="Last name" size='small' fullWidth variant="outlined" /></div>
               </div>
 
               <div className='second-r'>
@@ -67,7 +68,7 @@ showPassword = (event) => {
 
               <div className='next-button'>
               <div className='button-container'>
-                    <button>Next</button>
+                    <button style={{ backgroundColor: '#1a73e8',color: 'white' }}>Next</button>
                     <p>Sign in instead</p>
               </div>
              </div>
