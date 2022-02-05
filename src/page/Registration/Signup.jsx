@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 //import TextField from '@mui/material/TextField';
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
-// import { TextField } from '@mui/material'
 // import logo from '../../assets/logo.jpg'
  import './Signup.css'
 // import './Signup.scss'
