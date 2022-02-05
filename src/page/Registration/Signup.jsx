@@ -12,17 +12,57 @@ export class Signup extends Component {
     super(props);
 
     this.state = {
-        type:"password"
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confirm: '',
+        firstNameError: false,
+        lastNameError: false,
+        emailError: false,
+        passwordError: false,
+        confirmError: false,
+        type: "password"
     };
 }
 
-showPassword = (event) => {
-    event.target.checked ? 
+changeState = (event) => {
     this.setState({
-        type:"text"
-    }) : this.setState({
-        type:"password" 
+        [event.target.name]: event.target.value
     })
+}
+
+validation = () => {
+    let isError = false;
+    const error = this.state;
+    error.firstNameError = this.state.firstName === '' ? true : false;
+    error.lastNameError = this.state.lastName === '' ? true : false;
+    error.emailError = this.state.email === '' ? true : false;
+    error.passwordError = this.state.password === '' ? true : false;
+    error.confirmError = this.state.confirm === '' ? true : false;
+
+    this.setState({
+        ...error
+    })
+
+    isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError || error.confirmError
+    return isError;
+}
+
+next = () => {
+    let isValidated = this.validation();
+    if(!isValidated){
+        console.log("Navigate");
+    }
+}
+
+showPassword = (event) => {
+    event.target.checked ?
+        this.setState({
+            type: "text"
+        }) : this.setState({
+            type: "password"
+        })
 }
   render() {
     return (
@@ -41,12 +81,18 @@ showPassword = (event) => {
               </div>
               
               <div className='first-r'>
-              <div className='left-r'><TextField type={this.state.type} id="outlined-basic" label="First name" size='small' fullWidth variant="outlined" /></div>
-              <div className='left-r'><TextField  type={this.state.type} id="outlined-basic" label="Last name" size='small' fullWidth variant="outlined" /></div>
+              <div className='left-r'><TextField id="outlined-basic" name='first name' label="First name" error={this.state.firstNameError}
+                            helperText={this.state.firstNameError ? "First Name is required" : ''}
+                            onChange={(event) => this.changeState(event)} size='small' fullWidth variant="outlined" /></div>
+              <div className='left-r'><TextField id="outlined-basic" label="Last name" name='last name' size='small' fullWidth variant="outlined" error={this.state.lastNameError}
+                            helperText={this.state.lastNameError ? "Last Name is required" : ''}
+                            onChange={(event) => this.changeState(event)} /></div>
               </div>
 
               <div className='second-r'>
-              <div className='username'><TextField id="outlined-basic" label="Username" helperText="You can use letter, numbers & periods" fullWidth size='small' variant="outlined" /></div>
+              <div className='username'><TextField id="outlined-basic" label="Username" name='email' helperText="You can use letter, numbers & periods" fullWidth size='small' variant="outlined" error={this.state.emailError}
+                            helperText={this.state.emailError ? "Email is required" : ''}
+                            onChange={(event) => this.changeState(event)} /></div>
               </div>
 
               <div className='email'>
@@ -54,8 +100,12 @@ showPassword = (event) => {
               </div>
 
               <div className='third-r'>
-              <div className='left-r' > <TextField id="outlined-basic" label="Password" variant="outlined" size='small' className='pass' /></div>
-              <div className='left-r' > <TextField id="outlined-basic" label="confirm" variant="outlined" size='small' className='pass' /></div>             
+              <div className='left-r' > <TextField type={this.state.type} id="outlined-basic" label="Password" name='password' variant="outlined" size='small' fullWidth error={this.state.passwordError}
+                            helperText={this.state.passwordError ? "Password is required" : ''}
+                            onChange={(event) => this.changeState(event)} /></div>
+              <div className='left-r' > <TextField type={this.state.type} id="outlined-basic" label="confirm" name='confirm' variant="outlined" size='small' fullWidth error={this.state.confirmError}
+                            helperText={this.state.confirmError ? "Confirm password is required" : ''}
+                            onChange={(event) => this.changeState(event)} /></div>             
               </div>
 
               <div className='helper-Text'>
@@ -68,7 +118,7 @@ showPassword = (event) => {
 
               <div className='next-button'>
               <div className='button-container'>
-                    <button style={{ backgroundColor: '#1a73e8',color: 'white' }}>Next</button>
+                    <button onClick={this.next} >Next</button>
                     <p>Sign in instead</p>
               </div>
              </div>
